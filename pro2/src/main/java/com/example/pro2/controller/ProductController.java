@@ -1,5 +1,7 @@
-package com.example.pro2;
+package com.example.pro2.controller;
 
+import com.example.pro2.repository.ProductRepository;
+import com.example.pro2.entity.Product;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
