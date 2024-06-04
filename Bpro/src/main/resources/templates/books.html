@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Books</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+</head>
+<body>
+<div class="container">
+    <h1>Books</h1>
+    <a class="btn btn-primary" th:href="@{/books/new}">Add New Book</a>
+    <a class="btn btn-secondary" th:href="@{/publishers}">Publishers</a>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="book : ${books}">
+            <td th:text="${book.id}"></td>
+            <td th:text="${book.name}"></td>
+            <td>
+                <a class="btn btn-info" th:href="@{/books/{id}(id=${book.id})}">Details</a>
+                <a class="btn btn-warning" th:href="@{/books/edit/{id}(id=${book.id})}">Edit</a>
+                <a class="btn btn-danger" th:href="@{/books/delete/{id}(id=${book.id})}">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

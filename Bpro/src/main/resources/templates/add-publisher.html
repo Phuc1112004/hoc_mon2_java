@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Publisher</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+
+    <h1 class="mt-5">Add Publisher</h1>
+    <form  th:action="@{/publishers}" th:object="${publisher}" method="post">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" id="name" th:field="*{name}" placeholder="Enter product name" />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Add publisher</button>
+    </form>
+</div>
+</body>
+</html>
