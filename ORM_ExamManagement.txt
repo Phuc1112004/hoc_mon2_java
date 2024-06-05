@@ -1,0 +1,73 @@
+-Student:
+id (Primary Key)
+name
+date_of_birth
+gender
+school_id (Foreign Key)
+
+
+-Subject:
+id (Primary Key)
+name
+block_id (Foreign Key)
+
+
+
+-Majors:
+id (Primary Key)
+name
+block_id (Foreign Key)
+
+
+-Block:
+id (Primary Key)
+name
+
+
+-School:
+id (Primary Key)
+name
+address
+
+
+
+-Room:
+id (Primary Key)
+name
+capacity
+school_id (Foreign Key)
+
+
+-Invigilator:
+id (Primary Key)
+name
+supervisor_id (Foreign Key, nullable=True)
+
+
+-Exam:
+id (Primary Key)
+subject_id (Foreign Key)
+room_id (Foreign Key)
+date
+time
+
+
+-Exam_Student:
+exam_id (Primary Key, Foreign Key)
+student_id (Primary Key, Foreign Key)
+score
+
+
+
+-Student_Majors:
+student_id (Primary Key, Foreign Key)
+major_id (Primary Key, Foreign Key)
+
+
+-Room_Invigilator:
+room_id (Primary Key, Foreign Key)
+invigilator_id (Primary Key, Foreign Key)
+
+
+
+
