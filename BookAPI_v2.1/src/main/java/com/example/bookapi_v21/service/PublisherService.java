@@ -1,6 +1,5 @@
 package com.example.bookapi_v21.service;
 
-import com.example.bookapi_v21.model.Book;
 import com.example.bookapi_v21.model.Publisher;
 import com.example.bookapi_v21.repository.PublisherRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,8 +22,8 @@ public class PublisherService {
         return publisherRepository.save(publisher);
     }
 
-    public Publisher getPublisherById(int id){
-        return publisherRepository.findById(id).get();
+    public Optional<Publisher> getPublisherById(int id){
+        return Optional.of(publisherRepository.findById(id).get());
     }
 
     public void deletePublisher(int id){

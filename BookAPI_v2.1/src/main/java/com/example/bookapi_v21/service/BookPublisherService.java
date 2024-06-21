@@ -12,7 +12,7 @@ import java.util.Optional;
 @Service
 public class BookPublisherService {
     @Autowired
-    private BookPublisherRepository bookPublisherRepository;
+    private static BookPublisherRepository bookPublisherRepository;
 
     public List<BookPublisher> getAllBookPublishers() {
         return bookPublisherRepository.findAll();
@@ -26,7 +26,7 @@ public class BookPublisherService {
         return bookPublisherRepository.findById(id);
     }
 
-    public void deleteBookPublisher(int id) {
+    public static void deleteBookPublisher(int id) {
         bookPublisherRepository.deleteById(id);
     }
 
